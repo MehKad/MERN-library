@@ -21,10 +21,10 @@ const apiControllers = {
     }
   },
 
-  getBookByTitle: async (req, res) => {
-    const { title } = req.params;
+  getBookById: async (req, res) => {
+    const { id } = req.params;
     try {
-      const book = await Book.findOne({ title });
+      const book = await Book.findById(id);
       if (!book) {
         return res.status(404).json({ error: "Book not found" });
       }
@@ -34,13 +34,13 @@ const apiControllers = {
     }
   },
 
-  updateBookByTitle: async (req, res) => {
-    const { title } = req.params;
-    const { author } = req.body;
+  updateBook: async (req, res) => {
+    const { id } = req.params;
+    const { title, author } = req.body;
     try {
-      const updatedBook = await Book.findOneAndUpdate(
-        { title },
-        { author },
+      const updatedBook = await Book.findByIdAndUpdate(
+        id,
+        { title, author },
         { new: true }
       );
       if (!updatedBook) {
@@ -52,10 +52,10 @@ const apiControllers = {
     }
   },
 
-  deleteBookByTitle: async (req, res) => {
-    const { title } = req.params;
+  deleteBook: async (req, res) => {
+    const { id } = req.params;
     try {
-      const deletedBook = await Book.findOneAndDelete({ title });
+      const deletedBook = await Book.findByIdAndDelete(id);
       if (!deletedBook) {
         return res.status(404).json({ error: "Book not found" });
       }

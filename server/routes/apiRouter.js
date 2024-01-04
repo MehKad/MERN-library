@@ -4,8 +4,8 @@ const apiControllers = require("../controllers/apiControllers");
 
 router.get("/books", apiControllers.getAllBooks);
 router.post("/books", apiControllers.addBook);
-router.get("/books/:title", apiControllers.getBookByTitle);
-router.put("/books/:title", apiControllers.updateBookByTitle);
-router.delete("/books/:title", apiControllers.deleteBookByTitle);
+router.get("/books/:id", apiControllers.getBookById);
+router.put("/books/:id", apiControllers.updateBook);
+router.delete("/books/:id", apiControllers.deleteBook);
 
 module.exports = router;
