@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
+import "../style/BookDetail.css";
 
 const BookDetail = () => {
   const { id } = useParams();
@@ -51,12 +52,12 @@ const BookDetail = () => {
   };
 
   if (!book) {
-    return <div>Loading...</div>;
+    return <div className="loading">Loading...</div>;
   }
 
   return (
-    <div>
-      <h2>Book Detail</h2>
+    <div className="book-detail-container">
+      <h2 className="book-detail-header">Book Detail</h2>
       <p>Title: {book.title}</p>
       <p>Author: {book.author}</p>
       <label>Edit Title:</label>
@@ -64,19 +65,21 @@ const BookDetail = () => {
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        className="input-field"
       />
       <label>Edit Author:</label>
       <input
         type="text"
         value={author}
         onChange={(e) => setAuthor(e.target.value)}
+        className="input-field"
       />
-      <br />
-      <br />
-      <button onClick={handleUpdateBook}>Update Book</button>
-      <br />
-      <br />
-      <button onClick={handleDeleteBook}>Delete Book</button>
+      <button onClick={handleUpdateBook} className="update-book-button">
+        Update Book
+      </button>
+      <button onClick={handleDeleteBook} className="delete-book-button">
+        Delete Book
+      </button>
       <br />
     </div>
   );

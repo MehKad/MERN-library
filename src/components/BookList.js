@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "../style/BookList.css";
 
 const BookList = () => {
   const [books, setBooks] = useState([]);
@@ -19,12 +20,14 @@ const BookList = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Book List</h2>
-      <ul>
+    <div className="book-list-container">
+      <h2 className="book-list-header">Book List</h2>
+      <ul className="book-list">
         {books.map((i) => (
-          <li key={i._id}>
-            <Link to={`/books/${i._id}`}>{i.title}</Link>
+          <li key={i._id} className="book-item">
+            <Link to={`/books/${i._id}`} className="book-link">
+              {i.title}
+            </Link>
           </li>
         ))}
       </ul>

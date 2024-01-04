@@ -1,0 +1,23 @@
+.book-list-container {
+  margin: 20px 0;
+}
+
+.book-list-header {
+  color: #333;
+}
+
+.book-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.book-item {
+  margin-bottom: 10px;
+}
+
+.book-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}

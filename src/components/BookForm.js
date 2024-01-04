@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "../style/BookForm.css";
 
 const BookForm = () => {
   const [title, setTitle] = useState("");
@@ -20,21 +21,25 @@ const BookForm = () => {
   };
 
   return (
-    <div>
-      <h2>Add Book</h2>
+    <div className="book-form-container">
+      <h2 className="book-form-header">Add Book</h2>
       <label>Title:</label>
       <input
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        className="input-field"
       />
       <label>Author:</label>
       <input
         type="text"
         value={author}
         onChange={(e) => setAuthor(e.target.value)}
+        className="input-field"
       />
-      <button onClick={handleAddBook}>Add Book</button>
+      <button onClick={handleAddBook} className="add-book-button">
+        Add Book
+      </button>
     </div>
   );
 };

@@ -1,0 +1,31 @@
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.nav-bar {
+  background-color: #333;
+  padding: 10px;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.page-header {
+  color: #333;
+}
